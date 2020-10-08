@@ -1,4 +1,4 @@
-name : CI Staging
+name : CD Production
 
 on:
     pull_request:
@@ -10,5 +10,5 @@ jobs:
         runs-on: self-hosted
         steps:
             - uses: actions/checkout@v2
-            - name: 
+            - name: Build Container
               run: docker-compose --file docker-compose.yml up -d --build resume-site
